@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leve Saúde Mental | Instituto de cuidado emocional</title>
+<meta name="description" content="Instituto com psicólogos e profissionais da saúde mental. Conheça nossa equipe e fale com a gente pelo WhatsApp.">
+<meta name="theme-color" content="#EEF4F6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mist:#EEF4F6;
+  --paper:#FAFCFC;
+  --ink:#17343D;
+  --ink-soft:#4B6670;
+  --sea:#3E8190;
+  --sea-deep:#2A6270;
+  --sky:#CFE5EA;
+  --sun:#F4DC95;
+  --wa:#1B8755;
+  --line:#CBDDE2;
+  --radius:999px;
+  --serif:'Young Serif',Georgia,serif;
+  --sans:'Figtree',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--sans);background:var(--mist);color:var(--ink);line-height:1.6;font-size:1.0625rem;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sea);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(238,244,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-family:var(--serif);font-size:1.35rem;text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.brand i{width:22px;height:22px;border-radius:50%;background:var(--sea);display:inline-block;box-shadow:10px 4px 0 -2px var(--sun)}
+nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
+nav a{text-decoration:none;font-weight:500;color:var(--ink-soft)}
+nav a:hover{color:var(--ink)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:var(--radius);padding:.5rem 1rem;font:inherit;font-weight:600;color:var(--ink);cursor:pointer}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.5rem;border-radius:var(--radius);font-weight:600;text-decoration:none;border:2px solid transparent;transition:transform .15s,background .15s;font-size:1rem;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#166f46}
+.btn-ig{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ig:hover{background:var(--ink);color:#fff}
+.btn-sm{padding:.55rem 1.1rem;font-size:.95rem}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:clamp(3.5rem,9vw,7rem) 0 clamp(4rem,9vw,7rem)}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6.4vw,5rem);line-height:1.04;max-width:13ch;letter-spacing:-.01em}
+.hero p.lead{margin-top:1.6rem;max-width:46ch;font-size:1.2rem;color:var(--ink-soft)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.breath{position:absolute;right:-8vw;top:50%;width:min(620px,62vw);aspect-ratio:1;transform:translateY(-50%);z-index:1;pointer-events:none}
+.breath span{position:absolute;inset:0;border-radius:50%;animation:breathe 9s ease-in-out infinite}
+.breath .b1{background:var(--sky)}
+.breath .b2{inset:14%;background:#B3D6DE;animation-delay:-1.2s}
+.breath .b3{inset:30%;background:var(--sun);animation-delay:-2.4s;opacity:.9}
+@keyframes breathe{0%,100%{transform:scale(.92)}50%{transform:scale(1.04)}}
+
+/* Sections */
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.12;max-width:20ch}
+.intro{max-width:56ch;color:var(--ink-soft);margin-top:1rem}
+
+/* Sobre */
+.about{background:var(--paper)}
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.about p+p{margin-top:1.1rem}
+.about .text{color:var(--ink-soft)}
+.about .text strong{color:var(--ink);font-weight:600}
+
+/* Áreas */
+.areas ul{list-style:none;margin-top:2.2rem;display:grid;grid-template-columns:repeat(2,1fr);column-gap:clamp(2rem,6vw,5rem)}
+.areas li{padding:1.15rem 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;font-weight:500}
+.areas li span{color:var(--ink-soft);font-weight:400;font-size:.95rem;text-align:right}
+
+/* Equipe */
+.team{background:var(--paper)}
+.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin:2rem 0 3rem}
+.chip{border:1.5px solid var(--line);background:transparent;border-radius:var(--radius);padding:.5rem 1.1rem;font:inherit;font-weight:500;color:var(--ink-soft);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.members{display:grid;grid-template-columns:repeat(3,1fr);gap:3.2rem 2.5rem}
+.member{display:flex;flex-direction:column}
+.member.hide{display:none}
+.arch{aspect-ratio:4/5;border-radius:999px 999px 18px 18px;overflow:hidden;background:var(--sky);display:grid;place-items:center;position:relative}
+.arch img{width:100%;height:100%;object-fit:cover}
+.arch .ini{font-family:var(--serif);font-size:3.4rem;color:var(--sea-deep)}
+.member:nth-child(3n+2) .arch{background:var(--sun)}
+.member:nth-child(3n+2) .arch .ini{color:#7A5F10}
+.member:nth-child(3n) .arch{background:#D9D6F0}
+.member:nth-child(3n) .arch .ini{color:#4A4590}
+.member h3{font-family:var(--serif);font-weight:400;font-size:1.4rem;margin-top:1.1rem;line-height:1.2}
+.member .reg{color:var(--sea-deep);font-weight:600;font-size:.95rem;margin-top:.2rem}
+.member .role{margin-top:.5rem;color:var(--ink-soft);font-size:.98rem}
+.member .btn{margin-top:1rem;align-self:flex-start}
+.note-proto{margin-top:3rem;padding:1rem 1.2rem;border:1.5px dashed var(--sea);border-radius:14px;color:var(--sea-deep);font-size:.95rem;max-width:64ch}
+
+/* Como começar */
+.steps{margin-top:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:1.1rem}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:2rem;color:var(--sea);display:block;line-height:1;margin-bottom:.6rem}
+.steps h3{font-size:1.15rem;margin-bottom:.4rem}
+.steps p{color:var(--ink-soft)}
+
+/* Contato */
+.contact{background:var(--ink);color:#EAF3F5;position:relative;overflow:hidden}
+.contact h2{color:#fff;max-width:18ch}
+.contact .intro{color:#B9D1D8}
+.contact .btn-ig{color:#fff;border-color:#fff}
+.contact .btn-ig:hover{background:#fff;color:var(--ink)}
+.contact::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;aspect-ratio:1;border-radius:50%;background:rgba(244,220,149,.14)}
+.contact .wrap{position:relative;z-index:1}
+
+footer{padding:2rem 0 5.5rem;font-size:.9rem;color:var(--ink-soft);background:var(--mist)}
+footer .wrap{display:flex;flex-direction:column;gap:.6rem}
+footer a{color:var(--sea-deep)}
+
+/* WhatsApp flutuante */
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#fff;box-shadow:0 8px 24px rgba(23,52,61,.28);transition:transform .15s}
+.float-wa:hover{transform:scale(1.07)}
+.float-wa svg{width:30px;height:30px}
+
+@media (max-width:900px){
+  .members{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .about .grid,.areas ul{grid-template-columns:1fr}
+  .breath{opacity:.55;right:-30vw}
+}
+@media (max-width:720px){
+  .menu-btn{display:block}
+  nav{position:absolute;left:0;right:0;top:72px;background:var(--mist);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:flex-start;gap:0;padding:.5rem 4%}
+  nav li{width:100%}
+  nav a{display:block;padding:.9rem 0;border-top:1px solid var(--line)}
+  nav li:first-child a{border-top:0}
+  .members{grid-template-columns:1fr;max-width:340px;margin-inline:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  .breath span{animation:none}
+  html{scroll-behavior:auto}
+  .btn,.float-wa{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio"><i aria-hidden="true"></i>Leve Saúde Mental</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#sobre">Quem somos</a></li>
+        <li><a href="#cuidados">Cuidados</a></li>
+        <li><a href="#equipe">Nossa equipe</a></li>
+        <li><a href="#comecar">Como começar</a></li>
+        <li><a class="btn btn-wa btn-sm" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="breath" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+  <div class="wrap">
+    <h1>Cuidar da mente pode ser leve.</h1>
+    <p class="lead">Somos um instituto com psicólogos e outros profissionais da saúde mental, reunidos para te acolher no seu ritmo.</p>
+    <div class="cta-row">
+      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.800 1 1-3.700-.2-.4a9.800 9.800 0 0 1-1.500-5.200C2.100 6.500 6.600 2 12 2c2.600 0 5.100 1 6.900 2.900a9.700 9.700 0 0 1 2.900 6.900c0 5.400-4.400 9.900-9.800 9.900zm5.400-7.400c-.3-.1-1.800-.9-2-1s-.5-.1-.7.100-.8 1-1 1.200-.4.200-.7.100a8 8 0 0 1-4-3.500c-.3-.5.300-.5.900-1.600.1-.2.100-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400s-1 1-1 2.500 1.100 2.900 1.200 3.100 2.100 3.300 5.200 4.600c1.900.8 2.700.9 3.600.7.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400s-.3-.2-.6-.3z"/></svg>Falar no WhatsApp</a>
+      <a class="btn btn-ig" data-ig href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></svg>Seguir no Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap grid">
+    <h2>Um lugar para cuidar de quem você é, sem pressa.</h2>
+    <div class="text">
+      <p>O <strong>Leve Saúde Mental</strong> reúne profissionais de diferentes áreas da saúde mental em um só espaço. Cada pessoa chega com uma história, e por isso cada acompanhamento é pensado de forma individual.</p>
+      <p>Nosso trabalho é feito com <strong>escuta, ética e respeito ao seu tempo</strong>. Você pode conhecer cada profissional da equipe e escolher com quem se sente mais à vontade para começar.</p>
+      <p>[Texto de exemplo: a psicóloga pode trocar pela história e pelos valores reais do instituto.]</p>
+    </div>
+  </div>
+</section>
+
+<section class="areas" id="cuidados">
+  <div class="wrap">
+    <h2>Em que podemos te acompanhar</h2>
+    <p class="intro">Alguns dos temas que chegam até nós. Se o seu não está aqui, é só perguntar.</p>
+    <ul>
+      <li>Ansiedade <span>Preocupação que não desliga</span></li>
+      <li>Depressão e tristeza <span>Falta de energia e de vontade</span></li>
+      <li>Autoestima <span>Como você se vê e se trata</span></li>
+      <li>Relacionamentos <span>Casal, família e amizades</span></li>
+      <li>Estresse e burnout <span>Cansaço do trabalho e da rotina</span></li>
+      <li>Luto e mudanças <span>Perdas e novas fases</span></li>
+      <li>Crianças e adolescentes <span>Com orientação à família</span></li>
+      <li>Avaliação e acompanhamento <span>Psicológico e neuropsicológico</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="team" id="equipe">
+  <div class="wrap">
+    <h2>Conheça nossa equipe</h2>
+    <p class="intro">Profissionais registrados nos seus conselhos, com formações e abordagens diferentes. Escolha quem faz mais sentido para você.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filtrar por área"></div>
+    <div class="members" id="members"></div>
+    <p class="note-proto"><strong>Protótipo:</strong> nomes, registros e fotos desta seção são exemplos. Para trocar, edite a lista <code>EQUIPE</code> no final do arquivo.</p>
+  </div>
+</section>
+
+<section id="comecar">
+  <div class="wrap">
+    <h2>Como começar</h2>
+    <ol class="steps">
+      <li><h3>Chame no WhatsApp</h3><p>Conte de forma breve o que te trouxe até aqui. Sem compromisso.</p></li>
+      <li><h3>Combine o melhor horário</h3><p>Nossa equipe indica o profissional e os horários disponíveis, presencial ou online.</p></li>
+      <li><h3>Faça a primeira sessão</h3><p>Um primeiro encontro para se conhecerem e definirem, juntos, como seguir.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <h2>Pronto para dar o primeiro passo?</h2>
+    <p class="intro">Responderemos assim que possível. Se você está em crise, ligue para o CVV no 188 (gratuito, 24 horas) ou procure o serviço de urgência mais próximo.</p>
+    <div class="cta-row">
+      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-ig" data-ig href="#" target="_blank" rel="noopener">@levesaudemental_</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="ano"></span> Leve Saúde Mental. Todos os direitos reservados.</div>
+    <div>Cidade/UF · Endereço · [dados de exemplo]. Atendimento presencial e online.</div>
+    <div>Este site tem caráter informativo e não substitui consulta com profissional. Conteúdo conforme o Código de Ética Profissional do Psicólogo.</div>
+    <div>Protótipo para aprovação.</div>
+  </div>
+</footer>
+
+<a class="float-wa" data-wa href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.800 1 1-3.700-.2-.4a9.800 9.800 0 0 1-1.500-5.200C2.100 6.500 6.600 2 12 2c2.600 0 5.100 1 6.900 2.900a9.700 9.700 0 0 1 2.900 6.900c0 5.400-4.400 9.900-9.800 9.900zm5.400-7.400c-.3-.1-1.800-.9-2-1s-.5-.1-.7.100-.8 1-1 1.200-.4.200-.7.100a8 8 0 0 1-4-3.500c-.3-.5.300-.5.900-1.600.1-.2.100-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400s-1 1-1 2.500 1.100 2.900 1.200 3.100 2.100 3.300 5.200 4.600c1.900.8 2.700.9 3.600.7.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400s-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+/* ====== CONFIGURAÇÃO: troque aqui ====== */
+const WHATSAPP = "5500000000000"; // DDI + DDD + número, só dígitos (ex.: 5548999999999)
+const MENSAGEM = "Olá! Vim pelo site do Leve Saúde Mental e gostaria de mais informações.";
+const INSTAGRAM = "https://www.instagram.com/levesaudemental_/";
+
+/* Equipe: foto = caminho da imagem (ex.: "fotos/ana.jpg"). Vazio mostra as iniciais. */
+const EQUIPE = [
+  { nome:"Nome do Profissional", registro:"CRP 00/00000", area:"Psicologia", funcao:"Psicóloga clínica · Terapia cognitivo-comportamental", foto:"" },
+  { nome:"Nome do Profissional", registro:"CRP 00/00000", area:"Psicologia", funcao:"Psicóloga clínica · Psicanálise", foto:"" },
+  { nome:"Nome do Profissional", registro:"CRM 00000", area:"Psiquiatria", funcao:"Psiquiatra · Adultos", foto:"" },
+  { nome:"Nome do Profissional", registro:"CRP 00/00000", area:"Neuropsicologia", funcao:"Neuropsicóloga · Avaliação e reabilitação", foto:"" },
+  { nome:"Nome do Profissional", registro:"CRP 00/00000", area:"Psicologia", funcao:"Psicólogo · Casais e famílias", foto:"" },
+  { nome:"Nome do Profissional", registro:"CRP 00/00000", area:"Infantil e adolescente", funcao:"Psicóloga · Crianças e adolescentes", foto:"" }
+];
+/* ======================================= */
+
+const waLink = txt => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(txt)}`;
+document.querySelectorAll('[data-wa]').forEach(a => a.href = waLink(MENSAGEM));
+document.querySelectorAll('[data-ig]').forEach(a => a.href = INSTAGRAM);
+document.getElementById('ano').textContent = new Date().getFullYear();
+
+const menuBtn = document.getElementById('menuBtn'), menu = document.getElementById('menu');
+menuBtn.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+menu.addEventListener('click', e => { if (e.target.tagName === 'A') { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); } });
+
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const iniciais = n => n.split(' ').filter(Boolean).slice(0,2).map(p => p[0]).join('').toUpperCase();
+
+const membersEl = document.getElementById('members');
+membersEl.innerHTML = EQUIPE.map(m => `
+  <article class="member" data-area="${esc(m.area)}">
+    <div class="arch">${m.foto ? `<img src="${esc(m.foto)}" alt="Foto de ${esc(m.nome)}" loading="lazy">` : `<span class="ini" aria-hidden="true">${esc(iniciais(m.nome))}</span>`}</div>
+    <h3>${esc(m.nome)}</h3>
+    <div class="reg">${esc(m.registro)}</div>
+    <p class="role">${esc(m.funcao)}</p>
+    <a class="btn btn-ig btn-sm" target="_blank" rel="noopener" href="${waLink('Olá! Gostaria de agendar com ' + m.nome + '.')}">Agendar com este profissional</a>
+  </article>`).join('');
+
+const areas = ['Todos', ...new Set(EQUIPE.map(m => m.area))];
+const filtersEl = document.getElementById('filters');
+filtersEl.innerHTML = areas.map((a,i) => `<button class="chip" aria-pressed="${i===0}" data-f="${esc(a)}">${esc(a)}</button>`).join('');
+filtersEl.addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  filtersEl.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
+  membersEl.querySelectorAll('.member').forEach(el => el.classList.toggle('hide', b.dataset.f !== 'Todos' && el.dataset.area !== b.dataset.f));
+});
+</script>
+</body>
+</html>
